@@ -9,3 +9,4 @@ At least 2 more considerations, from the following or based on your own ideas:
 - Cost of gas
 Users should be able to "favorite" and "eliminate" cities, and see their master list of favorites. If they re-search for an eliminated city, they should still be able to access the data but should receive a friendly reminder that they eliminated it.
 Consider how you will make sure all of the numbers are put into perspective for your user, so that they all have meaning.
+https://github.com/DataUSA/datausa-api/wiki
