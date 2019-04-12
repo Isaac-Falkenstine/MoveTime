@@ -35,5 +35,17 @@ describe 'As a visitor' do
     expect(page).to have_content("A account already exist with that email")
   end
 
+  it 'I cannot register without matching password' do
+
+    visit '/register'
+
+    fill_in 'user[email]', with: "amy@amy.com"
+    fill_in 'user[name]', with: "Abby Smith"
+    fill_in 'user[password]', with: "password"
+    fill_in 'user[password_confirmation]', with: "pass1234"
+
+    click_on "Register"
+
+    expect(page).to have_content("Passwords did not match")
   end
 end
