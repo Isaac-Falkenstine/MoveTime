@@ -7,26 +7,26 @@ describe 'As a visitor' do
 
     visit '/register'
 
-    fill_in 'user[email]', with: "amy@amy.com"
-    fill_in 'user[name]', with: "Abby Smith"
+    fill_in 'user[email]', with: "email@email.com"
+    fill_in 'user[name]', with: "Abbie Smith"
     fill_in 'user[password]', with: password
     fill_in 'user[password_confirmation]', with: password
 
     click_on "Register"
 
-    expect(User.where(name: "Abby Smith").first.id).to be_a(Integer)
-    expect(page).to have_content("Registered as Abby Smith")
+    expect(User.where(name: "Abbie Smith").first.id).to be_a(Integer)
+    expect(page).to have_content("Registered as Abbie Smith")
   end
 
   it 'I cannot register with existing email' do
 
     password = "password"
-    user_1 = create(:user, email: "amy@amy.com", password: password)
+    user_1 = create(:user, email: "email@email.com", password: password)
 
     visit '/register'
 
-    fill_in 'user[email]', with: "amy@amy.com"
-    fill_in 'user[name]', with: "Abby Smith"
+    fill_in 'user[email]', with: "email@email.com"
+    fill_in 'user[name]', with: "Abbie Smith"
     fill_in 'user[password]', with: password
     fill_in 'user[password_confirmation]', with: password
 
@@ -39,8 +39,8 @@ describe 'As a visitor' do
 
     visit '/register'
 
-    fill_in 'user[email]', with: "amy@amy.com"
-    fill_in 'user[name]', with: "Abby Smith"
+    fill_in 'user[email]', with: "email@email.com"
+    fill_in 'user[name]', with: "Abbie Smith"
     fill_in 'user[password]', with: "password"
     fill_in 'user[password_confirmation]', with: "pass1234"
 
