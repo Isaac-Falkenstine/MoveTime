@@ -1,10 +1,14 @@
 require "rails_helper"
 
-describe "a visitor visits the welcome page" do
-  xit "can enter their z" do
-    visit user_topic_path(@topic)
-    click_on @question_1.title
+describe "a user visits the dashboard page" do
+  it "can enter the zipcode and get back some info" do
+    user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    expect(page).to have_content "Saved Links"
+    visit dashboard_path
+    fill_in :zip, with: "80124"
+    click_on "Search"
+
+    expect(page).to have_content "Douglas County"
   end
 end
