@@ -15,7 +15,7 @@ class ZipService
     conn.get(url)
   end
 
-  def coords
-    JSON.parse(response.body, symbolize_names: true)[:results][0][:geometry][:location]
+  def county
+    JSON.parse(response.body, symbolize_names: true)[:results][0][:address_components][1][:long_name]
   end
 end
