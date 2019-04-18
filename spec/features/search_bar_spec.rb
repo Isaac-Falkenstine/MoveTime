@@ -6,9 +6,9 @@ describe "a user visits the dashboard page" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit dashboard_path
-    fill_in :zip, with: "80124"
+    fill_in :search, with: "80124"
     click_on "Search"
 
-    expect(page).to have_content "Douglas County"
+    expect(page).to have_content "Littleton"
   end
 end
