@@ -1,4 +1,4 @@
-class DashboardFacade
+class LocationFacade
 
   def county(zip)
     service.county(zip)

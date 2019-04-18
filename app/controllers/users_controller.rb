@@ -21,7 +21,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @facade = DashboardFacade.new
   end
 
   private
