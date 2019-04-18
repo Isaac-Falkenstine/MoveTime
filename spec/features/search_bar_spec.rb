@@ -9,6 +9,6 @@ describe "a user visits the dashboard page" do
     fill_in :search, with: "80124"
     click_on "Search"
 
-    expect(page).to have_content "Douglas County"
+    expect(page).to have_content "Littleton"
   end
 end
