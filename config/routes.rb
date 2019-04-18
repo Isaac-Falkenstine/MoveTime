@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get '/register', to: "users#new"
   resources 'users'
   get '/dashboard', to: "users#show", as: "dashboard"
+
+  get "/location", to: "location#show"
 end
