@@ -1,12 +1,17 @@
 class LocationFacade
 
-  def county(zip)
-    service.county(zip)
+  def initialize(zip)
+    @zip = zip
+  end
+
+  def county
+    binding.pry
+    service.county
   end
 
   private
 
   def service
-   service = CityService.new
+   service = ZipService.new
   end
 end

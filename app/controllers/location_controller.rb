@@ -1,7 +1,7 @@
 class LocationController < ApplicationController
 
   def show
-    @facade = LocationFacade.new
+    @facade = LocationFacade.new(params[:search])
   end
 
   # private
